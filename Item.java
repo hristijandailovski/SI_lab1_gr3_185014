@@ -59,6 +59,31 @@ class Item {
 		}
 		return ddv*0.15;
 	}
+}
 
+class Receipt{
+	private List<Item> listOfItems;
+	void addToList(Item item){
+		listOfItems.add(item);
+	}
+	void deleteItemOfList(item){
+		listOfItems.remove(item);
+	}
+	double sumOfPrices(){
+		int n=listOfItems.size();
+		double result=0;
+		for(int i=0;i<n;i++){
+			result+=listOfItems.get(i).getPrice();
+		}
+		return result;
+	}
+	double sumOfTaxReturn(){
+		int n=listOfItems.size();
+		double result=0;
+		for(int i=0;i<n;i++){
+			result+=listOfItems.get(i).getTaxReturn();
+		}
+		return result;
+	}
 
 }
